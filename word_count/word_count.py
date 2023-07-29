@@ -49,16 +49,19 @@ if __name__ == "__main__":  # run the following code only if the code is used as
     else:
         input_text = args.input_text
 
-    if not input_text:
-        print("Error: No input text provided.")
-        sys.exit(1)
-
-    if args.lines:
-        line_count = count_lines(input_text)
-        print("Line count:", line_count)
-    elif args.characters:
-        char_count = count_characters(input_text)
-        print("Characters count:", char_count)
-    else:
+    if not args.lines and not args.characters:
+        # If no specific option is provided, count all metrics
         word_count = count_words(input_text)
+        line_count = count_lines(input_text)
+        char_count = count_characters(input_text)
+
         print("Word count:", word_count)
+        print("Line count:", line_count)
+        print("Character count:", char_count)
+    else:
+        if args.lines:
+            line_count = count_lines(input_text)
+            print("Line count:", line_count)
+        if args.characters:
+            char_count = count_characters(input_text)
+            print("Character count:", char_count)
