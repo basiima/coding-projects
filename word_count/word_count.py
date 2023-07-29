@@ -1,5 +1,7 @@
-"""Module to handle command-line arguments and options"""
+# Module to handle command-line arguments and options
 import argparse
+# Importing the sys module which contains exit function
+import sys
 
 
 def count_words(text):
@@ -43,13 +45,13 @@ if __name__ == "__main__":  # run the following code only if the code is used as
     if args.file:
         input_text = read_text_from_file(args.file)
         if input_text is None:
-            exit(1)
+            sys.exit(1)
     else:
         input_text = args.input_text
 
     if not input_text:
         print("Error: No input text provided.")
-        exit(1)
+        sys.exit(1)
 
     if args.lines:
         line_count = count_lines(input_text)
