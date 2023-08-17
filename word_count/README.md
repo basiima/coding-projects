@@ -20,7 +20,7 @@ Welcome to the Word Count Project! This is a simple command-line tool that calcu
 
 ## Example
 
-To help you get started, we've included an example file in the repository. You can use it to test the word count tool:
+To help you get started, I've included an example file in the repository. You can use it to test the word count tool:
 
 `python word_count.py test.txt`
 
